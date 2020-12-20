@@ -1,0 +1,40 @@
+<div class ="full-video-container">
+
+<video loop muted autoPlay poster="true" class="full-video">
+        <source src="https://cdn.shopify.com/s/files/1/0497/2537/4617/files/bird4.mp4?v=1608347813" type="video/mp4" />
+      </video>
+
+
+</div>
+
+
+<style>
+  .full-video-container{
+  	width: 100%;
+    height: 100%;
+    position: relative;
+  }
+  .full-video{
+  	height: 100%;
+  }
+  
+  
+</style>
+
+{% schema %}
+  {
+    "name": "Full Video",
+    "settings": [],
+
+	"presets": [{
+    "name": "Full Video",
+    "category": "Videos"
+  }]
+
+  }
+{% endschema %}
+
+
+
+{% javascript %}
+{% endjavascript %}

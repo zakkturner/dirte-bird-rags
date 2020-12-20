@@ -1,0 +1,51 @@
+{% assign new-releases = collections['new-releases'] %}
+
+<section class="new-releases"> 
+  <div class="title-container">
+    <h3 class="title1">New</h3>    
+    <h3 class="title2">Releases</h3>
+
+  </div>
+  <div class="releases-container">
+  	{% for product in new-releases.products%}
+    <div class="product-container">
+      <a href="{{ product.url }}">
+    	<img src="{{ product.featured_media | img_url: 'large' }}"/>
+      </a>
+      <a href="{{ product.url }}">{{ product.title }}</a>
+    </div>
+    {% endfor %}
+  </div>
+  
+</section>
+<style>
+  .new-releases{
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .releases-container{
+  	display: grid;
+    grid-template-column: 1fr;
+    
+  }
+  
+  
+</style>
+{% schema %}
+  {
+    "name": "New Releases",
+    "settings": [],
+  "presets" :[{
+    "name": "New Releases",
+    "category": "Collections"
+  }]
+  
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}
