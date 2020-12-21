@@ -1,4 +1,41 @@
+<div class="home"> 
+<div class="an-logo" id="anLogo"></div>
+<div class="left-bar" id="leftBar" ></div>
+<div class="right-bar" id="rightBar"></div>
+
 {{ content_for_index }}
+</div>
+<script src="{{ 'gsap.min.js'  | asset_url}}"></script>
+<script src="{{ 'index.js'  | asset_url}}"></script>
 
 
-{% section 'new-releases'%}
+<style>
+#shopify-section-header{
+    display: none;
+}
+
+#MainContent{
+    padding-top: 0;
+}
+.home{
+    width: 100%;
+    height 100vh;
+position: relative;
+}
+.left-bar{
+    width: 50%;
+    height: 100%;
+    background: #fff;
+    position: fixed;
+    z-index: 999;
+}
+.right-bar{
+    width: 50%;
+    height: 100%;
+    background: #fff;
+    position: fixed;
+    z-index: 999;
+    left: 50%;
+}
+
+</style>
