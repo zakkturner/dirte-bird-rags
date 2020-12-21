@@ -2,9 +2,11 @@
 
 <section class="new-releases"> 
   <div class="title-container">
+  <div class="titles">
     <h3 class="title1">New</h3>    
     <h3 class="title2">Releases</h3>
-
+  </div>
+<div class="newline"></div>
   </div>
   <div class="releases-container">
   	{% for product in new-releases.products%}
@@ -12,25 +14,156 @@
       <a href="{{ product.url }}">
     	<img src="{{ product.featured_media | img_url: 'large' }}"/>
       </a>
-      <a href="{{ product.url }}">{{ product.title }}</a>
+      <a href="{{ product.url }}" class="title-link">{{ product.title }} <span class="arrow">&#8594;</span></a>
     </div>
     {% endfor %}
   </div>
-  
+  <div class="shop-btn">
+  <a class="shop-now" href="/collections/new-releases">Shop New Releases</a>
+</div>
 </section>
 <style>
   .new-releases{
     width: 90%;
-    margin: 0 auto;
+    margin: 20px auto;
+  }
+  .title-container{
+   display: flex;
+    margin-bottom: 20px;
+    justify-content: space-between;
+  }
+
+  h3{
+    font-size: 30px;
+  }
+  .title1{
+    margin: 0;
+  }
+
+  .title2{
+    margin-left: 27px;
+  }
+
+   .newline{
+     width: 50%;
+      height: 4px;
+      margin-top: 0;
+      background: black;
+      align-self: flex-end;
+      margin-bottom: 25px;
   }
 
   .releases-container{
   	display: grid;
-    grid-template-column: 1fr;
+    grid-template-columns: 1fr;
     
   }
+
+  .product-container{
+    display: grid;
+    grid-template-column: 1fr;
+    margin-bottom: 35px;
+  }
+  .title-link{
+    padding-top: 10px;
+    display: flex;
+    justify-content: space-between;
+
+  }
+
+  .shop-btn{
+    display: flex;
+    justify-content: center;
+
+  }
+
+  .shop-now{
+    background-color: #01d0fe;
+    padding: 20px 50px;
+    border-radius: 3px;
+    color: #fff;
+  }
+  @media only screen and (min-width: 768px) {
+
+  .title-container{
+    width: 70%;
+    margin: 20px auto;
+  }
+
+
+  .product-container{
+    justify-content: center;
+  }
+
+
+  }
+
+
+    @media only screen and (min-width: 1024px) {
+      .title-container{
+        width: 35%;
+      }
+
+   .releases-container{
+  	display: grid;
+    grid-template-columns: 25% 20% 1fr ;
+    grid-gap: 15px;
+    
+  }
+.product-container{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 35px;
+    flex-direction: column;
+
+}
+.product-container:nth-child(1){
+ align-self: baseline;
+padding-top: 105px;
+}
+
+.product-container:nth-child(2){
+ align-self: end;
+
+}
+
+.product-container:nth-child(3){
+ padding-bottom: 42px;
+
+}
+  }
+    @media only screen and (min-width: 1280px) {
+      .new-releases{
+        width: 60%;
+      }
+      .title-container{
+        width: 50%;
+      }
+
+   .releases-container{
   
-  
+    grid-template-columns: 25% 22% 1fr ;
+    grid-gap: 20px;
+    
+  }
+
+
+.product-container:nth-child(1){
+padding-top: 42px;
+}
+
+.product-container:nth-child(2){
+ align-self: end;
+
+}
+
+.product-container:nth-child(3){
+ padding-bottom: 42px;
+
+}
+  }
+
+
 </style>
 {% schema %}
   {
