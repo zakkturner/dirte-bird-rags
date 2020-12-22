@@ -1,40 +1,80 @@
-<div class="home"> 
-<div class="an-logo" id="anLogo"></div>
+<div class="homeMask" id="homeMask"> 
+
+    <div class="an-logo" id="anLogo"></div>
+ <svg height="400" width="400" class="circle" >
+  <circle id="circle" stroke="#01cffe" fill="none" cx="200" cy="200" r="180" stroke-width="10"></circle>
+</svg> 
 <div class="left-bar" id="leftBar" ></div>
 <div class="right-bar" id="rightBar"></div>
 
-{{ content_for_index }}
 </div>
+{{ content_for_index }}
 <script src="{{ 'gsap.min.js'  | asset_url}}"></script>
+<script src="{{ 'DrawSVGPlugin.min.js'  | asset_url}}"></script>
 <script src="{{ 'index.js'  | asset_url}}"></script>
 
 
 <style>
+
+    #MainContent{
+        position: relative;
+    }
 #shopify-section-header{
     display: none;
+    visibility: hidden;
 }
 
 #MainContent{
     padding-top: 0;
 }
-.home{
+.homeMask{
     width: 100%;
-    height 100vh;
-position: relative;
+    height: 100vh;
+position: absolute;
+background: transparent;
+
+}
+
+.circle{
+    
+    /* opacity: 0; */
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+z-index: 998;
+}
+
+#circle{
+    visibility: hidden;
+
+}
+.an-logo{
+    width: 200px;
+    height: 230px;
+    background: url("{{ 'dirteLogo.png'  | 'asset_url'}}") no-repeat center center;
+    background-size: cover;
+    visibility: hidden;
+position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+z-index: 999;
+
 }
 .left-bar{
     width: 50%;
     height: 100%;
     background: #fff;
-    position: fixed;
-    z-index: 999;
+    position: absolute;
+    z-index: 997;
 }
 .right-bar{
     width: 50%;
     height: 100%;
     background: #fff;
-    position: fixed;
-    z-index: 999;
+    position: absolute;
+    z-index: 997;
     left: 50%;
 }
 
