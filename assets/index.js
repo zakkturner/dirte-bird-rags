@@ -35,6 +35,6 @@ function init(){
 
 }
 
-window.addEventListener("load", function(event){
-    init();
-})
+// window.addEventListener("load", function(event){
+//     init();
+// })
