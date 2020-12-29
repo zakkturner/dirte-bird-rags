@@ -5,13 +5,23 @@ let circle = document.getElementById('circle');
 let header = document.getElementById('shopify-section-header');
 let homeMask = document.getElementById('homeMask');
 let text = document.getElementById('introTxt');
+let imgOne = document.getElementById('imgOne');
+let imgTwo = document.getElementById('imgTwo');
+let imgThree = document.getElementById('imgThree');
+let line = document.getElementById('line')
+let title = document.getElementById('title');
+let desc = document.getElementById('desc')
 
-gsap.registerPlugin(DrawSVGPlugin, SplitText)
+gsap.registerPlugin(DrawSVGPlugin, SplitText, ScrollTrigger)
 
-var SplitText = new SplitText(text, {type: "words,chars"});
-var chars = SplitText.chars;
-var words = SplitText.words;
+var aniText = new SplitText(text, {type: "words,chars"});
+var chars = aniText.chars;
+var words = aniText.words;
 
+var descText = new SplitText(desc, {type: "words"});
+var descWords = descText.words
+
+// **** intro animation ****
 
 let tl = gsap.timeline();
 function init(){
@@ -38,3 +48,35 @@ function init(){
 // window.addEventListener("load", function(event){
 //     init();
 // })
+
+
+// **** scroll triggers ****
+let tl2 = gsap.timeline({scrollTrigger: {
+    trigger: imgOne,
+    start: "top center"
+}});
+tl2.fromTo(line, 1, {drawSVG: 0 },  {drawSVG: '100%', ease: 'power3.inOut'}, 'lineAndText');
+tl2.from(title, 1, { x: 200, opacity: 0, ease: "power3.inOut", }, 'lineAndText');
+tl2.from(descWords, 1, {opacity: 0, ease: 'power3.inOut', y: 50, stagger: .1}, 'imgs')
+tl2.from(imgOne, {
+    x: -400,
+    opacity: 0,
+    duration: 2,
+    
+    ease: "expo.inOut"
+}, 'imgs');
+
+tl2.from(imgTwo, {
+    x: 100,
+    opacity: 0,
+    duration: 2,
+    delay: .2,
+    ease: "expo.inOut"
+}, 'imgs');
+tl2.from(imgThree, {
+    y: 400,
+    opacity: 0,
+    duration: 2,
+    delay: .3,
+    ease: "expo.inOut"
+}, 'imgs')

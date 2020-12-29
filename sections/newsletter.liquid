@@ -1,22 +1,19 @@
 <div class="newsletter-section{% if section.settings.show_background %} index-section--newsletter-background{% endif %}">
-  <div class="page-width">
-    <div class="section-header text-center">
-      {% if section.settings.section_title != blank %}
-        <h2 class="h2">{{ section.settings.section_title | escape }}</h2>
-      {% endif %}
-      {% if section.settings.subheading != blank %}
-        <div class="rte">{{ section.settings.subheading }}</div>
-      {% endif %}
-    </div>
+  <div class="page-width news">
+    <div class="newslogo"></div>
+    <div class="form-container">
     {%- assign formId = 'Contact_' | append: section.id -%}
-    {% form 'customer', id: formId, novalidate: 'novalidate', class: 'contact-form form-single-field' %}
+
+   
+    {% form 'customer', id: formId, novalidate: 'novalidate', class: 'contact-form news-form form-single-field' %}
       {%- if form.posted_successfully? -%}
         <p class="form-message form-message--success" tabindex="-1" data-form-status>
           {{ 'general.newsletter_form.confirmation' | t }}
         </p>
       {%- endif -%}
       <input type="hidden" name="contact[tags]" value="newsletter">
-      <div class="input-group {% if form.errors %} input-group--error{% endif %}">
+     
+      <div class="input-group site-news{% if form.errors %} input-group--error{% endif %}">
         <input type="email"
           name="contact[email]"
           id="{{ formId }}-email"
@@ -47,9 +44,48 @@
         </span>
       {%- endif -%}
     {% endform %}
+    <div class="section-header news-tag text-center">
+      {% if section.settings.section_title != blank %}
+        <p >{{ section.settings.section_title | escape }}</p>
+      {% endif %}
+      {% if section.settings.subheading != blank %}
+        <div class="rte news-rte">{{ section.settings.subheading }}</div>
+      {% endif %}
+    </div>
+    </div>
   </div>
 </div>
+<style>
+  .news{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  .form-container{
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  .newslogo{
+    background: url("{{ 'dirteLogo.png' | asset_url }}") no-repeat center center;
+    background-size: cover;
+    width: 200px;
+    height: 230px;
+  }
+  .site-news{
+    flex-wrap: nowrap;
+  }
 
+  .news-form{
+    margin: 0 auto;
+    display: flex;
+    align-items: flex-end;
+  }
+  .news-tag{
+    margin-bottom: 0 !important;
+  }
+  .news-rte{
+    font-size: 12px;
+  }
+</style>
 
 
 {% schema %}
