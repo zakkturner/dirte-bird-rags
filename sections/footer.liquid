@@ -332,14 +332,14 @@
       <div class="grid__item medium-up--hide {{ payment_width_class }} small--one-whole">{{ payment_icon_markup }}</div>
 
       {%- if social_icons and show_selectors -%}
-        <div class="grid__item small--hide site-footer-item-align-right {% if show_payment_icons %}one-half{% endif %}">
+        <div class="grid__item allRights small--hide site-footer-item {% if show_payment_icons %}one-half{% endif %}">
           <small class="site-footer__copyright-content">&copy; {{ 'now' | date: "%Y" }}, {{ shop.name | link_to: routes.root_url }}</small>
           <small>All rights reserved</small>
           <!-- <small class="site-footer__copyright-content site-footer__copyright-content--powered-by">{{ powered_by_link }}</small> -->
         </div>
       {%- endif -%}
 
-      <div class="grid__item small--one-whole {{ copyright_show_class }} site-footer-item-align-right">
+      <div class="grid__item allRights small--one-whole {{ copyright_show_class }} site-footer-item">
         <small class="site-footer__copyright-content">&copy; {{ 'now' | date: "%Y" }}, {{ shop.name | link_to: routes.root_url }}</small>
         <small>All rights reserved</small>
         <!-- <small class="site-footer__copyright-content site-footer__copyright-content--powered-by">{{ powered_by_link }}</small> -->
@@ -352,22 +352,63 @@
 <style>
 .site-footer{
   display: flex;
+  flex-direction: column;
 }
 .site-footer__content{
   display: grid;
-grid-template-columns: 1fr 1fr;
-justify-content: center;
+grid-template-columns: 1fr 1fr 1fr;
+
 }
 .site-footer__item.site-footer__item--one-half{
   display: flex;
 justify-content: center;
 }
-                    
 
+           .site-footer_item{
+            text-align: center;
+display: flex;
+justify-content: center;
+padding: 0;
+           }         
   .site-footer__linklist{
     display: flex;
     flex-direction: column;
     
+  }
+  .site-footer__linklist-item a{
+    font-size: 10px;
+  }
+  .site-footer__item--one-third{
+    padding: 0;
+  }
+.site-footer__item-inner.site-footer__item-inner--link_list{
+  display: flex;
+flex-direction: column;
+align-items: center;
+text-align: center;
+}
+  .site-footer__linklist-item{
+    padding: 0 0 5px 0;
+  }
+  .site-footer__content{
+    padding: 0;
+  }
+  .site-footer__item{
+    display: flex;
+    justify-content: center;
+  }
+.grid__item{
+  float:inherit;
+}
+
+.site-footer__social-icons{
+  text-align: left;
+  display: flex;
+justify-content: center;
+}
+  .grid-item.all-rights{
+    float: inherit !important;
+    text-align: left;
   }
 </style>
 
