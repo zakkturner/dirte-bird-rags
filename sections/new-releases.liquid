@@ -1,6 +1,6 @@
 {% assign new-releases = collections['new-releases'] %}
 
-<section class="new-releases"> 
+<section class="new-releases" id = "newRel"> 
   <div class="title-container">
   <div class="titles">
     <h3 class="title1">New</h3>    
@@ -8,10 +8,10 @@
   </div>
 <div class="newline"></div>
   </div>
-  <div class="releases-container">
-  	{% for product in new-releases.products%}
-    <div class="product-container">
-      <a href="{{ product.url }}">
+  <div class="releases-container" id="releases">
+  	{% for product in new-releases.products limit:3 %}
+    <div class="product-container" >
+      <a href="{{ product.url }}" >
     	<img src="{{ product.featured_media | img_url: 'large' }}"/>
       </a>
       <a href="{{ product.url }}" class="title-link">{{ product.title }} <span class="arrow">&#8594;</span></a>
@@ -25,7 +25,7 @@
 <style>
   .new-releases{
     width: 90%;
-    margin: 20px auto;
+    margin: 50px auto;
   }
   .title-container{
    display: flex;

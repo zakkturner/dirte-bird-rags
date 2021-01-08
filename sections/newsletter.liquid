@@ -31,7 +31,7 @@
           {% endif %}
           >
         <span class="input-group__btn">
-          <button type="submit" class="btn" name="commit">
+          <button type="submit" class="btn news-btn"  name="commit">
             <span>{{ 'general.newsletter_form.submit' | t }}</span>
           </button>
         </span>
@@ -58,7 +58,7 @@
 <style>
   .news{
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
   }
   .form-container{
     display: grid;
@@ -69,6 +69,8 @@
     background-size: cover;
     width: 200px;
     height: 230px;
+    justify-self: center;
+    margin-bottom: 50px;
   }
   .site-news{
     flex-wrap: nowrap;
@@ -84,6 +86,19 @@
   }
   .news-rte{
     font-size: 12px;
+  }
+
+  .news-btn{
+    background: #01d0fe;
+  }
+
+  @media only screen and (min-width: 768px) {
+    .news{
+    grid-template-columns: 1fr 1fr;
+  }
+  .newslogo{
+    justify-self: flex-start;
+  }
   }
 </style>
 

@@ -10,8 +10,17 @@ let imgTwo = document.getElementById('imgTwo');
 let imgThree = document.getElementById('imgThree');
 let line = document.getElementById('line')
 let title = document.getElementById('title');
-let desc = document.getElementById('desc')
+let desc = document.getElementById('desc');
+let newRel = document.getElementById('newRel');
+let firstProd = document.querySelector('#releases div:nth-child(1)');
+let secProd = document.querySelector('#releases div:nth-child(2)');
+let thirdProd = document.querySelector('#releases div:nth-child(3)');
 
+
+
+console.log('hello')
+console.log(firstProd)
+console.log(newRel)
 gsap.registerPlugin(DrawSVGPlugin, SplitText, ScrollTrigger)
 
 var aniText = new SplitText(text, {type: "words,chars"});
@@ -80,3 +89,13 @@ tl2.from(imgThree, {
     delay: .3,
     ease: "expo.inOut"
 }, 'imgs')
+
+
+// **** new releases st ****
+let tl3 = gsap.timeline({scrollTrigger: {
+    trigger: newRel,
+    start: "top center"
+}}).from(firstProd, 1, {opacity: 0 , x: -200, delay: .1, ease: 'power3.inOut'}, 'newRel')
+    .from(secProd, 1, {opacity: 0 , x: 200, delay: .5, ease: 'power3.inOut'}, 'newRel' )
+    .from(thirdProd, 1, {opacity: 0 , x: -200, delay: .9, ease: 'power3.inOut'}, 'newRel' );
+
