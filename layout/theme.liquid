@@ -23,7 +23,8 @@
   <link rel="preload" as="font" href="{{ base_font_bold | font_url }}" type="font/woff2" crossorigin>
   <link rel="preload" href="{{ 'theme.js' | asset_url }}" as="script">
   <link rel="preload" href="{{ 'lazysizes.js' | asset_url }}" as="script">
-
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=East+Sea+Dokdo&display=swap" rel="stylesheet"> 
   {%- if canonical_url != blank  -%}
     <link rel="canonical" href="{{ canonical_url }}">
   {%- endif -%}
@@ -195,3 +196,12 @@
   </ul>
 </body>
 </html>
+
+<style>
+  body{
+    font-family: 'East Sea Dokdo', cursive !important;
+  }
+  h2, h3{
+    font-family: 'East Sea Dokdo', cursive !important;
+  }
+</style>
