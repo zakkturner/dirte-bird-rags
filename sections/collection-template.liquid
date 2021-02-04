@@ -233,7 +233,43 @@
 
 {% endpaginate %}
 
+<style>
+ ul.grid.grid--uniform.grid--view-items{
+   display: grid;
+   grid-template-columns: 1fr;
+ }
 
+ .grid__item--collection-template{
+   justify-self: center;
+   width: 100%;
+ }
+ .price{
+   align-items: center;
+ }
+
+ .product-card {
+    
+    text-align: center;
+}
+
+.price__regular, .price__sale, .price__unit {
+  margin-right: 0;
+}
+
+ @media only screen and (min-width: 768px) {
+ul.grid.grid--uniform.grid--view-items{
+
+   grid-template-columns: 1fr 1fr;
+ }
+ }
+
+  @media only screen and (min-width: 1024px) {
+ul.grid.grid--uniform.grid--view-items{
+
+   grid-template-columns: 1fr 1fr 1fr;
+ }
+ }
+</style>
 
 {% schema %}
 {

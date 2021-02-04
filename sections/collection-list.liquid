@@ -1,7 +1,8 @@
 <div class="page-width">
   {% if section.settings.title != blank %}
     <div class="section-header text-center">
-      <h2>{{ section.settings.title | escape }}</h2>
+      {% comment %} <h2>{{ section.settings.title | escape }}</h2> {% endcomment %}
+     
     </div>
   {% endif %}
 

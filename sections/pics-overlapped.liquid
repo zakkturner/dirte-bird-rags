@@ -7,13 +7,13 @@
   </div>
   <div class="text-container">
     <!-- <div class="line"></div> -->
-    <svg height="210" width="200">
+    <svg height="210" >
       <line id="line" x1="10" x2="200" y1="20" y2="20" style="stroke:rgb(0,0,0);stroke-width:5"></line>
     </svg>
     <div class="text">
       <h2 class="title" id="title">{{section.settings.title}}</h2>
       
-      <p id="desc"> 
+      <p id="desc" class="desc"> 
       	{{section.settings.description}}
       </p>
     </div>
@@ -31,19 +31,21 @@
   margin: 0  auto 100px auto;
   	position: relative;
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: 1fr 1fr;
 }
   .pics-container{
   	width: 100%;
     height: 100%;
   	position: relative;
     margin-bottom: 400px;
+    display: flex;
+    flex-direction: column;
     
   }
   .img{
   	width: 150px;
     height: 250px;
-    position: absolute;
+    margin-bottom: 20px
   }
   
   
@@ -85,6 +87,9 @@ grid-gap: 20px;
     padding-top: 15%;
     
   }
+  svg{
+    width: 100%;
+  }
   .line{
  width: 75%;
 height: 4px;
@@ -98,15 +103,17 @@ justify-self: flex-end;
   font-size: 32px;
 margin-bottom: 45%;
   }
-  
+  .desc{
+    font-size: 15rem;
+  }
   
 @media screen and (min-width: 768px) {
 .overlapped-pics{
 	width: 90%;
   margin: 0  auto 100px auto;
-  	
+  	height: auto;
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: 1fr 1fr;
 }
   .pics-container{
   	width: 100%;
@@ -116,9 +123,10 @@ margin-bottom: 45%;
     
   }
   .img{
-  	width: 300px;
-    height: 400px;
+  	width: 150px;
+    height: 200px;
     position: absolute;
+    margin-bottom: 0;
   }
   
   
@@ -142,13 +150,13 @@ margin-bottom: 45%;
   }
   .text-container{
   	display: grid;
-grid-template-columns: 1fr 1fr;
+grid-template-columns: 30% 1fr;
 grid-gap: 20px;
     padding-top: 15%;
     
   }
   .line{
- width: 75%;
+ width: 100%;
 height: 4px;
     margin-top: 6%;
 background: black;
@@ -168,8 +176,9 @@ margin-bottom: 45%;
 @media screen and (min-width: 1024px) {
 .overlapped-pics{
 	width: 85%;
+  height: 100vh;
   margin: 0 auto;
-  	
+  	padding-top: 180px;
   display: grid;
   grid-template-columns: 1fr 1fr;
 }
@@ -180,11 +189,10 @@ margin-bottom: 45%;
     margin-bottom: 0;
   }
   .img{
-  	width: 300px;
+  	width: 250px;
     height: 400px;
     position: absolute;
   }
-  
   
   .one{
 /*       background: gray;	 */
@@ -194,16 +202,16 @@ margin-bottom: 45%;
   }
   .two{
     
-left: 35%;
-bottom: 49%;
+left: 52%;
+bottom: 55%;
 
   }
   
   .three{
   
     
-    left: 11%;
-      bottom: 44%;
+    left: 0%;
+      bottom: 50%;
 
   
   }
@@ -235,7 +243,7 @@ margin-bottom: 45%;
 .overlapped-pics{
 	width: 70%;
   margin: 0 auto;
-  	
+  	padding-top: 0;
   display: grid;
   grid-template-columns: 1fr 1fr;
 }
@@ -244,11 +252,7 @@ margin-bottom: 45%;
     height: 100%;
   	position: relative;
   }
-  .img{
-  	width: 300px;
-    height: 400px;
-    position: absolute;
-  }
+  
   
   
   .one{
@@ -259,15 +263,14 @@ margin-bottom: 45%;
   }
   .two{
     
-	left: 27%;
-	bottom: 26%;
-
-  }
+	    left: 43%;
+    bottom: 26%;
+}
   
   .three{
   
-    left: 0%;
-	bottom: 20%;
+   left: 0%;
+bottom: 16%;
 
   
   }
@@ -294,7 +297,16 @@ margin-bottom: 45%;
 
 
 }
-  
+
+
+@media screen and (min-width: 1400px) {
+.img{
+  	width: 300px;
+    height: 400px;
+    position: absolute;
+  }
+} 
+
   
 @media screen and (min-width: 1600px) {
 .overlapped-pics{
