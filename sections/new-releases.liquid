@@ -9,7 +9,7 @@
 <div class="newline"></div>
   </div>
   <div class="releases-container">
-  	{% for product in new-releases.products%}
+  	{% for product in new-releases.products limit:3 %}
     <div class="product-container">
       <a href="{{ product.url }}">
     	<img src="{{ product.featured_media | img_url: 'large' }}"/>
@@ -68,6 +68,7 @@
     padding-top: 10px;
     display: flex;
     justify-content: space-between;
+  font-size: 1.1rem;
 
   }
 
@@ -79,9 +80,10 @@
 
   .shop-now{
     background-color: #01d0fe;
-    padding: 20px 50px;
+    padding: 15px 40px;
     border-radius: 3px;
     color: #fff;
+    font-size: 1.2rem;
   }
   @media only screen and (min-width: 768px) {
 
