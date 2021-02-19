@@ -8,9 +8,9 @@
   </div>
 <div class="newline"></div>
   </div>
-  <div class="releases-container">
+  <div class="releases-container" id="releases">
   	{% for product in new-releases.products limit:3 %}
-    <div class="product-container">
+    <div class="product-container" >
       <a href="{{ product.url }}">
     	<img src="{{ product.featured_media | img_url: 'large' }}"/>
       </a>

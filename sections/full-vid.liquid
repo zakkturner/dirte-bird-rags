@@ -1,5 +1,14 @@
 <div class ="full-video-container">
-
+<div class="vtext-container"> 
+  <p class="vid-text">
+  CEO and Founder Jay Burnz was born and raised in Indianapolis, Indiana where he learned
+early in life, “go get it by any means”. Not that life was hard, but that you have to go get the
+goals that you desire to achieve. The resources may not be available, so you move to where the
+probability of opportunities are presented. In 2019, Burnz decided it was time to move to Atlanta
+and seize those very opportunities that await him. Now father to two beautiful children and a
+brother to many, Burnz continues to push through his journey to inspire and deliver the
+resources that he has now gained, while continuously growing, back to his community.</p>
+</div>
 <video loop muted autoPlay poster="true" class="full-video">
         <source src="https://cdn.shopify.com/s/files/1/0497/2537/4617/files/bird4.mp4?v=1608347813" type="video/mp4" />
       </video>
@@ -17,7 +26,32 @@
   .full-video{
   	height: 100%;
   }
-  
+  .vtext-container{
+ position: absolute;
+    z-index: 999;
+    top: 25%;
+    left: 10%;
+    width: 85%
+  }
+  .vid-text{
+   
+    font-size: 1.5rem;
+    color: #fff;
+    
+  }
+
+   @media only screen and (min-width: 1024px) {
+.vtext-container{
+ 
+    width: 55%
+  }
+
+.vid-text{
+   
+    font-size: 2rem;
+    
+  }
+   }
   
 </style>
 
